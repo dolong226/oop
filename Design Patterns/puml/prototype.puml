@@ -1,0 +1,17 @@
+@startuml
+interface prototype.Prototype {
+~ Prototype clone()
+}
+
+class prototype.Button {
+- double x
+- double y
++ <<Create>> Button(Button)
++ Button clone()
+}
+
+
+
+
+prototype.Prototype <|.. prototype.Button
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+class abstractfactory.VictorianFactory {
++ Table createTable()
++ Chair createChair()
+}
+
+abstract class abstractfactory.Chair {
+}
+interface abstractfactory.AbstractFactory {
+~ Table createTable()
+~ Chair createChair()
+}
+
+abstract class abstractfactory.Table {
+}
+class abstractfactory.ModernTable {
+}
+class abstractfactory.ModernChair {
+}
+class abstractfactory.VictorianTable {
+}
+class abstractfactory.VictorianChair {
+}
+class abstractfactory.ModernFactory {
++ Table createTable()
++ Chair createChair()
+}
+
+
+
+abstractfactory.AbstractFactory <|.. abstractfactory.VictorianFactory
+abstractfactory.Table <|-- abstractfactory.ModernTable
+abstractfactory.Chair <|-- abstractfactory.ModernChair
+abstractfactory.Table <|-- abstractfactory.VictorianTable
+abstractfactory.Chair <|-- abstractfactory.VictorianChair
+abstractfactory.AbstractFactory <|.. abstractfactory.ModernFactory
+abstractfactory.Table <.. abstractfactory.AbstractFactory
+abstractfactory.Chair <.. abstractfactory.AbstractFactory
+@enduml

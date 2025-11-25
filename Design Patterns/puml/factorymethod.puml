@@ -1,0 +1,27 @@
+@startuml
+class factorymethod.SeaLogistic {
++ Transport createTransport()
+}
+
+class factorymethod.Truck {
+}
+class factorymethod.Ship {
+}
+interface factorymethod.Logistics {
+~ Transport createTransport()
+}
+
+class factorymethod.RoadLogistic {
++ Transport createTransport()
+}
+
+abstract class factorymethod.Transport {
+}
+
+
+factorymethod.Logistics <|.. factorymethod.SeaLogistic
+factorymethod.Transport <|-- factorymethod.Truck
+factorymethod.Transport <|-- factorymethod.Ship
+factorymethod.Logistics <|.. factorymethod.RoadLogistic
+factorymethod.Transport <.. factorymethod.Logistics
+@enduml
